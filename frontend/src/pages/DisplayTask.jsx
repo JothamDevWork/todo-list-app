@@ -45,9 +45,10 @@ function DisplayTask({ taskList, setTaskList, setDisplayAddTask }) {
                             <h3>{task.taskName}</h3>
                             <p>{task.description}</p>
 
-                            <button onClick={() => handleEdit(task)}>EDIT</button>
-                            <button onClick={() => deleteTask(taskList, setTaskList, task.id)}>DELETE</button>
-
+                            <div className="btn-container">
+                                <button onClick={() => handleEdit(task)}>Edit</button>
+                                <button onClick={() => deleteTask(taskList, setTaskList, task.id)}>Delete</button>
+                            </div>
 
 
                         </div>

@@ -6,5 +6,9 @@
 }
 
 .task-can {
-    @apply bg-gray-500;
+    @apply flex flex-col bg-gray-300 m-5 p-5 gap-5 rounded-lg w-[200px];
+}
+
+.edit-task-con {
+    @apply m-5;
 }
