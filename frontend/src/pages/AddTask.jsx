@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import addTaskLogic from '../logic/AddTask';
+import "../styles/AppTask.css";
 
 
-function AddTask({ setTaskList }) {
+function AddTask({ setTaskList, setDisplayAddTask }) {
 
     const [taskName, setTaskName] = useState("");
     const [description, setDescription] = useState("");
@@ -16,32 +17,43 @@ function AddTask({ setTaskList }) {
     }
 
     return (
-        <div>
+        <div className="add-task-con">
+
+            <div className="app-name">
+                <h1>To-Do List App</h1>
+            </div>
             <form onSubmit={handleSubmit}>
                 <div className="form-fields-container">
-                    <label htmlFor="taskName">Task Name:</label>
-                    <input
-                        type="text"
-                        placeholder="Task Name"
-                        id='taskName'
-                        value={taskName}
-                        onChange={(event) => setTaskName(event.target.value)}>
-                    </input>
+                    <div>
+                        <label htmlFor="taskName">Task Name:</label>
+                        <input
+                            type="text"
+                            placeholder="Task Name"
+                            id='taskName'
+                            value={taskName}
+                            onChange={(event) => setTaskName(event.target.value)}>
+                        </input>
+                    </div>
+
+                    <div>
+                        <label htmlFor="description">Description:</label>
+                        <input
+                            type="text"
+                            placeholder="Description"
+                            id='description'
+                            value={description}
+                            onChange={(event) => setDescription(event.target.value)}>
+                        </input>
+                    </div>
                 </div>
 
-                <div className="form-fields-container">
-                    <label htmlFor="description">Description:</label>
-                    <input
-                        type="text"
-                        placeholder="Description"
-                        id='description'
-                        value={description}
-                        onChange={(event) => setDescription(event.target.value)}>
-                    </input>
+                <div className='btn-container'>
+                    <button type="submit" >Add Task</button>
+                    <button type="button" onClick={() => setDisplayAddTask(false)} >View Task</button>
                 </div>
-
-                <button type="submit" >Add Task</button>
             </form>
+
+
         </div>
     )
 

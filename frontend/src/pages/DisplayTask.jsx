@@ -3,7 +3,7 @@ import deleteTask from "../logic/DeleteTask";
 import editTask from "../logic/editTask";
 import "../styles/DisplayTask.css";
 
-function DisplayTask({ taskList, setTaskList }) {
+function DisplayTask({ taskList, setTaskList, setDisplayAddTask }) {
     const [editingId, setEditingId] = useState(null);
     const [editTaskName, setEditTaskName] = useState("");
     const [editTaskDescription, setEditTaskDescription] = useState("");
@@ -38,19 +38,24 @@ function DisplayTask({ taskList, setTaskList }) {
 
                             <button onClick={() => handleSave(task.id)}>SAVE</button>
 
+
                         </div>
                     ) : (
-                        <>
+                        <div className="task-can">
                             <h3>{task.taskName}</h3>
                             <p>{task.description}</p>
 
                             <button onClick={() => handleEdit(task)}>EDIT</button>
                             <button onClick={() => deleteTask(taskList, setTaskList, task.id)}>DELETE</button>
 
-                        </>
+
+
+                        </div>
                     )}
+
                 </div>
             ))}
+            <button type="button" onClick={() => setDisplayAddTask(true)}>View Add Task</button>
         </>
     )
 }

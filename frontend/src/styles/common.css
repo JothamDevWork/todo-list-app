@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s all ease-in-out;
+}
+
+
+.app-con {
+    @apply flex flex-col justify-center items-center;
+    @apply h-screen w-full;
+
+}
+
+.app-name {
+    @apply flex justify-center m-5 text-4xl;
+}
+
+.form-fields-container {
+    @apply flex flex-col gap-5;
+}
+
+.btn-container {
+
+    @apply flex justify-between w-full pt-5;
+
+}
+
+button {
+    @apply bg-blue-200 rounded-md p-2 text-gray-500;
+}
+
+button:hover {
+    @apply bg-blue-400 text-black;
+}
