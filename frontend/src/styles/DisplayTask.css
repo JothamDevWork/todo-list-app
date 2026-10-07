@@ -1,0 +1,6 @@
+@import "tailwindcsss";
+
+.edit-task-con {
+    @apply flex flex-row bg-red-500;
+
+}

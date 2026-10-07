@@ -3,3 +3,4 @@ function deleteTask(taskList, setTaskList, id) {
 }
 
 export default deleteTask;
+
