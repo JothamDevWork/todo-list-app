@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.display-con {
+    @apply grid grid-cols-4;
+}
+
 .edit-task-con {
     @apply flex flex-col gap-2;
 
